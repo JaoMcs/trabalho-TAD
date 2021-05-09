@@ -21,22 +21,22 @@ void Imprimir(int *vetor, int tamVet);
 int TestarElemento (int *vetor, int tamVet, int elemento);
 
 // Retornar a soma de elementos presentes no conjuntos
-int RetornarSoma (int vetor, int tamVet);
+int RetornarSoma (int *vetor, int tamVet);
 
 // Retornar o menor elemento presente no conjunto
-int RetornarMenor (int vetor, int tamVet);
+int RetornarMenor (int *vetor, int tamVet);
 
 //Retornar o maior elemento presente no conjunto
-int RetornarMaior (int vetor, int tamVet);
+int RetornarMaior (int *vetor, int tamVet);
 
 //Retornar a média aritmética dos elementos de um conjunto
-int Media(int vetor, int tamVet);
+int Media(int *vetor, int tamVet);
 
 //Retornar a moda dos elementos de um conjunto
-int Moda(int vetor, int tamVet);
+int Moda(int *vetor, int tamVet);
 
 //Retornar a Mediana dos elementos de um conjunto
-int Mediana(int vetor, int tamVet);
+int Mediana(int *vetor, int tamVet);
 
 //Retornar o quartil 1 dos elementos de um conjunto
 int Quartil_1(int vetor, int tamVet);
