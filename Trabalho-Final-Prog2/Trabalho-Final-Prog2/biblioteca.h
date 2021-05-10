@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 //Inicializar o conjunto: cria um vetor e preenche com conteúdo de um arquivo.
 void Inicializar(int *vetor, int tamVet, char *arquivo);
@@ -39,32 +40,32 @@ int Moda(int *vetor, int tamVet);
 int Mediana(int *vetor, int tamVet);
 
 //Retornar o quartil 1 dos elementos de um conjunto
-int Quartil_1(int vetor, int tamVet);
+int Quartil_1(int *vetor, int tamVet);
 
 //Retornar o quartil 3 dos elementos de um conjunto
-int Quartil_3(int vetor, int tamVet);
+int Quartil_3(int *vetor, int tamVet);
 
 //Retornar o desvio padrão dos elementos de um conjunto
-double dp(int vetor, int tamVet);
+double Dp(int *vetor, int tamVet);
 
 //Comparar 2 conjuntos, retornando 1 se são iguais e 0 se são diferentes
-int Comparar(int vetorA, int tamVetA, int vetorB, int tamVetB);
+int Comparar(int *vetorA, int tamVetA, int *vetorB, int tamVetB);
 
 //Distancia euclidiana entre 2 conjuntos (os dois conjuntos devem ser do mesmo tamanho)
-float DistEuclidiana(int vetorA, int tamVetA, int vetorB, int tamVetB);
+double DistEuclidiana(int *vetorA, int tamVetA, int *vetorB, int tamVetB);
 
 //Unir os conjunto A e B, gerando um terceiro conjunto C.
-int *Uniao(int vetorA, int tamVetA, int vetorB, int tamVetB);
+int* Uniao(int* vetorA, int tamVetA, int* vetorB, int tamVetB);
 
 //Fusionar (intersecção) os elementos do conjunto A e B, gerando um terceiro conjunto C.
-int *Inter(int vetorA, int tamVetA, int vetorB, int tamVetB);
+int *Inter(int *vetorA, int tamVetA, int* vetorB, int tamVetB);
 
 //Ordenar conjunto através de métodos diferentes escolhido por você.
 void OrdenarA (int *vetorA, int tamVetA);
 void OrdenarB (int *vetorB, int tamVetB);
-void OrdenarC (int *vetorC, int tamVetC);
+void swap(int *xp, int *yp);
+void OrdenarC (int *vetorC, int esq ,int dir);
 void OrdenarD (int *vetorD, int tamVetD);
-
 
 
 #endif / *biblioteca_h */
