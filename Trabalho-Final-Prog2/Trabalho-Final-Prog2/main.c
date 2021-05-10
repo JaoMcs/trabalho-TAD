@@ -6,7 +6,6 @@
 //
 
 #include "biblioteca.h"
-#include <stdio.h>
 
 int main(int argc, const char * argv[]) {
   
@@ -16,7 +15,7 @@ int main(int argc, const char * argv[]) {
   int *vet2 = (int*)malloc (tamanho * sizeof (int));
   int* vet3;
   char nomeArq[30] = "a100.txt";
-  char nomeArq2[30] = "a100.txt";
+  char nomeArq2[30] = "m100.txt";
 
   Inicializar(vet2, tamanho, nomeArq2);
   Inicializar(vet, tamanho, nomeArq);
@@ -25,14 +24,14 @@ int main(int argc, const char * argv[]) {
   Imprimir(vet2, tamanho2);
   int posicao = TestarElemento(vet, tamanho, 3062);
   printf("\nPosicao eh: %d\n", posicao);
-  int somatorio = RetornarSoma(vet, tamanho);
+  int somatorio = RetornarSoma(vet2, tamanho2);
   printf("\n\nsomatorio: %d\n", somatorio);
   int menor = RetornarMenor(vet, tamanho);
   printf("%d eh o menor numero do vetor\n", menor);
   int maior = RetornarMaior(vet, tamanho);
   printf("%d eh o maior numero do vetor\n", maior);
-  int media = Media(vet, tamanho);
-  printf("%d eh a media do vetor\n", media);
+  double media = Media(vet, tamanho);
+  printf("%.2f eh a media do vetor\n", media);
   int moda = Moda(vet, tamanho);
   if (moda != -1) {
     printf("%d eh a moda do vetor\n", moda);
@@ -56,16 +55,16 @@ int main(int argc, const char * argv[]) {
 
   vet3 = Inter(vet, tamanho, vet2, tamanho2);
   Imprimir(vet3, tamanho+tamanho2);
-  
+
   OrdenarB(vet2, tamanho2);
   Imprimir(vet2, tamanho2);
-  
+
   OrdenarC(vet, 0, tamanho);
   Imprimir(vet, tamanho);
-  
+
   OrdenarD(vet2, tamanho2);
   Imprimir(vet2, tamanho2);
-    
+
   free(vet);
   free(vet2);
   free(vet3);

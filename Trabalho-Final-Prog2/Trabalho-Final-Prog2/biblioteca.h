@@ -31,7 +31,7 @@ int RetornarMenor (int *vetor, int tamVet);
 int RetornarMaior (int *vetor, int tamVet);
 
 //Retornar a média aritmética dos elementos de um conjunto
-int Media(int *vetor, int tamVet);
+double Media(int *vetor, int tamVet);
 
 //Retornar a moda dos elementos de um conjunto
 int Moda(int *vetor, int tamVet);
