@@ -256,37 +256,37 @@ void OrdenarA (int *vetorA, int tamVetA) { // Algoritmo de ordenacao simples
 }
 
 void OrdenarB (int *vetor, int tamVet) { // Boubble Sort
-  int i, j, min_idx;
+  int i, j, min_idx; // Indices
 
-  for (i = 0; i < tamVet-1; i++) {
-      min_idx = i;
-      for (j = i+1; j < tamVet; j++)
-        if (vetor[j] < vetor[min_idx])
-          min_idx = j;
+  for (i = 0; i < tamVet-1; i++) { // Looping simples que percorre o vetor todo
+      min_idx = i; // guardando do valor de i
+      for (j = i+1; j < tamVet; j++) // looping em J pra percorrer o vetor
+        if (vetor[j] < vetor[min_idx]) // Verificacao se o vetor na posicao min_idx é maior que o vetor no j
+          min_idx = j; // Troca do valor do min_idx
 
-      swap(&vetor[min_idx], &vetor[i]);
+      swap(&vetor[min_idx], &vetor[i]); // chamada da funcao swap que faz a troca dos valores
   }
 }
 void swap(int *xp, int *yp) {
-    int temp = *xp;
+    int temp = *xp; //troca dos valores utilizando uma variavel temporaria
     *xp = *yp;
     *yp = temp;
 }
 
 void OrdenarC (int *vetorC, int esq ,int dir) { //Quick Sort
-  int pivo = esq, i,ch,j;
-  for(i=esq+1;i<=dir;i++){
-      j = i;
-      if(vetorC[j] < vetorC[pivo]){
-          ch = vetorC[j];
-          while(j > pivo){
-            vetorC[j] = vetorC[j-1];
-              j--;
+  int pivo = esq, i,ch,j; // criacao do pivo (utilizando como referencia a esq e os indices
+  for(i=esq+1;i<=dir;i++){ // looping simples
+      j = i; // guardando o valor de i na variavel j
+      if(vetorC[j] < vetorC[pivo]){ // utilizando a o indice pivo para fazer a verificacao
+          ch = vetorC[j]; // guardando a variavel no ch
+          while(j > pivo){ // segundo looping que sera feito ate o j for maior que o pivo
+            vetorC[j] = vetorC[j-1]; // troca do j pelo valor anterior
+              j--; // decremento do j
           }
-        vetorC[j] = ch;
-          pivo++;
+        vetorC[j] = ch; //setando o vetor[j] como o ch
+           pivo++; // encremendo no pivo
       }
-  }
+  }// chamada recursiva da funcao passando como parametro um novo pivo e novos parametros de esq e dir
   if(pivo-1 >= esq) {
     OrdenarC(vetorC,esq,pivo-1);
   }
@@ -296,14 +296,14 @@ void OrdenarC (int *vetorC, int esq ,int dir) { //Quick Sort
 }
 
 void OrdenarD (int *vetorD, int tamVetD) { //Insertion Sort
-  int i, key, j;
-  for (i = 1; i < tamVetD; i++) {
-      key = vetorD[i];
-      j = i - 1;
-      while (j >= 0 && vetorD[j] > key) {
-        vetorD[j + 1] = vetorD[j];
-          j = j - 1;
+  int i, key, j; // criacao os indices e da variavel keys (onde ira guardar a chave)
+  for (i = 1; i < tamVetD; i++) { // loopin simples do inicio ate o final do vetor
+      key = vetorD[i]; // guardando o valor da chave do vetor no indice i
+      j = i - 1; // mudando o valor de j para o proixmo looping
+      while (j >= 0 && vetorD[j] > key) { // looping usando while
+        vetorD[j + 1] = vetorD[j]; // passando o valor do vetor no j para o proximo indice
+          j = j - 1; // alteracao do valor de j
       }
-    vetorD[j + 1] = key;
+    vetorD[j + 1] = key; // passando o valor da chave
   }
 }
